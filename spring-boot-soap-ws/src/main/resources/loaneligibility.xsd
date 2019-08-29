@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.nandithmalapati.com/spring/soap/api/loanEligibility"
+	xmlns:tns="http://www.nandithmalapati.com/spring/soap/api/loanEligibility"
+	elementFormDefault="qualified">
+	
+	<element name="CustomerRequest">
+		<complexType>
+			<sequence>
+				<element name="customerName" type="string" />
+				<element name="age" type="int" />
+				<element name="yearlyIncome" type="long"/>
+				<element name="creditScore" type="int" />
+				<element name="employmentMode" type="string" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="Acknowledgement">
+		<complexType>
+			<sequence>
+				<element name="isEligible" type="boolean" />
+				<element name="approvedAmount" type="long" />
+				<element name="CriteriaMismatch" type="string"
+					maxOccurs="unbounded" />
+			</sequence>
+		</complexType>
+	</element>
+</schema>
